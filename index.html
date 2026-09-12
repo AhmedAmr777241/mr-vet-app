@@ -1,7 +1,126 @@
-padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 20px; 
-            line-height: 1.8;
+Dr. Ahmed Amr, [06.09.2026 01:29]
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr VET Academy | منصة كورسات الطب البيطري</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
+        body { 
+            background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 60%, #020617 100%); 
+            color: #ffffff; 
+            min-height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 20px;
+        }
+        .container { 
+            background: rgba(15, 23, 42, 0.85); 
+            backdrop-filter: blur(25px); 
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(56, 189, 248, 0.3); 
+            padding: 50px 35px; 
+            border-radius: 32px; 
+            max-width: 580px; 
+            width: 100%; 
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 40px rgba(56, 189, 248, 0.15); 
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .logo-box {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .logo-box img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+            background: #fff;
+        }
+        h1 { 
+            font-size: 28px; 
+            font-weight: 900;
+            color: #38bdf8; 
+            margin-bottom: 12px; 
+            line-height: 1.4;
+            text-shadow: 0 2px 10px rgba(56, 189, 248, 0.3);
+        }
+        .subtitle { 
+            font-size: 16px; 
+            color: #cbd5e1; 
+            margin-bottom: 30px; 
+            line-height: 1.7; 
+        }
+        .features { 
+            text-align: right; 
+            background: rgba(30, 41, 59, 0.7); 
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            padding: 24px; 
+            border-radius: 18px; 
+            margin-bottom: 25px; 
+            font-size: 15px; 
+            color: #e2e8f0; 
+            line-height: 2; 
+        }
+        .features ul { list-style-type: none; }
+        .features li { margin-bottom: 12px; }
+        .section-title {
+            font-size: 17px;
+            color: #38bdf8;
+            font-weight: 700;
+            margin: 25px 0 15px 0;
+            text-align: right;
+            border-right: 4px solid #38bdf8;
+            padding-right: 10px;
+        }
+        .buttons-grid { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 14px; 
+            margin-bottom: 25px; 
+        }
+        .download-btn { 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); 
+            color: #ffffff; 
+            padding: 16px 22px; 
+            font-size: 16px; 
+            font-weight: 700; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .download-btn:hover { 
+            background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%); 
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.7);
+
+Dr. Ahmed Amr, [06.09.2026 01:29]
+}
+        .support-box { 
+            font-size: 15px; 
+            color: #e2e8f0; 
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 18px;
+            border-radius: 14px;
+            margin-bottom: 25px; 
+            line-height: 1.9;
         }
         .support-box a { 
             color: #38bdf8; 
@@ -10,16 +129,17 @@ padding: 15px;
         }
         .support-box a:hover { text-decoration: underline; }
         .tags {
-            font-size: 12px;
-            color: #64748b;
-            margin-bottom: 15px;
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 20px;
             direction: ltr;
+            font-weight: 600;
         }
         .footer { 
-            font-size: 12px; 
+            font-size: 13px; 
             color: #64748b; 
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 20px;
         }
     </style>
 </head>
@@ -38,7 +158,7 @@ padding: 15px;
                 <li>✨ <strong>ليه تختار منصة Mr VET؟</strong></li>
                 <li>📱 <strong>ذاكر براحتك:</strong> ميزة تحميل الفيديوهات ومشاهدتها أوفلاين في أي وقت ومن غير إنترنت.</li>
                 <li>🧠 <strong>اختبر نفسك:</strong> كويزات مستمرة وتفاعلية على كل المحاضرات والسكاشن عشان تثبت المعلومة أول بأول.</li>
-                <li>🔥 <strong>سيرفر طلقة:</strong> انسي إن المنصة تهنج في ليالي الامتحانات من الضغط؛ رافعين الفيديو على 3 مشغلات (يعني يعتبر الفيديو مرفوع 3 مرات لضمان التشغيل المستمر).</li>
+                <li>🔥 <strong>سيرفر طلقة:</strong> انسي إن المنصة تهنج في ليالي الامتحانات من الضغط؛ رافعين الفيديو على 3 مشغلات لضمان التشغيل المستمر.</li>
                 <li>💻 <strong>لكل الأجهزة:</strong> التطبيق شغال على كل أنواع الأجهزة.</li>
                 <li>📚 <strong>مفكرة الأكاديمية:</strong> المذكرات الخاصة بالكورسات متاحة حصرياً في مكتبة الوسام.</li>
             </ul>
@@ -46,15 +166,15 @@ padding: 15px;
 
         <div class="support-box">
             📞 <strong>الدعم الفني والاشتراكات:</strong><br>
-            معاك فريق دعم فني كامل 24 ساعة وبرجاء التواصل للاشتراك في الكورسات عبر تيليجرام:<br>
+            معاك فريق دعم فني كامل 24 ساعة، برجاء التواصل للاشتراك في الكورسات عبر تيليجرام:<br>
             <a href="https://t.me/MrVetSupport_1" target="_blank">@MrVetSupport_1</a>
         </div>
 
         <div class="section-title">📲 حمل التطبيق دلوقتي وابدأ رحلتك:</div>
 
         <div class="buttons-grid">
-            <a href="https://play.google.com/store/apps/details?id=com.techlab.hr.arabians" class="download-btn" target="_blank">📥 نسخة الأندرويد (Google Play)</a>
-            <a href="https://apps.apple.com/eg/app/mr-vet-app/id6745950401" class="download-btn" target="_blank">📥 نسخة الآيفون (iOS)</a>
+            <a href="https://play.google.com/store/apps/details?id=com.techlab.hr.arabians" class="download-btn" target="_blank">📥 تحميل نسخة الأندرويد (Google Play)</a>
+            <a href="https://apps.apple.com/eg/app/mr-vet-app/id6745950401" class="download-btn" target="_blank">📥 تحميل نسخة الآيفون (iOS)</a>
             <a href="https://drive.google.com/file/d/1enZhZt5qJgjpfAbKiaEUR2_5-xXSNSHB/view?usp=drive_link" class="download-btn" target="_blank">📥 نسخة هواوي وهونر وأنفنكس (APK)</a>
             <a href="https://drive.google.com/drive/folders/15ab08h-E4owmMUaW06YCPaAgAMEmiegW?usp=drive_link" class="download-btn" target="_blank">📥 نسخة الديسكتوب (PC)</a>
         </div>
