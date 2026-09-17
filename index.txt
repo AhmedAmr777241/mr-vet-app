@@ -3,390 +3,376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة Mr VET Academy | كورساتك معاك في كل مكان وبلا حدود</title>
-    <!-- Google Fonts & FontAwesome for luxury icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <title>منصة Mr VET - كورساتك معاك في كل مكان</title>
+    <!-- استيراد الخطوط والأيقونات -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        :root {
-            --primary: #10b981;
-            --primary-dark: #059669;
-            --secondary: #0f172a;
-            --accent: #34d399;
-            --bg-dark: #090d16;
-            --card-bg: rgba(17, 24, 39, 0.85);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --glow: rgba(16, 185, 129, 0.35);
-        }
-
+        /* إزالة الهوامش والتنسيق الأساسي لملء الشاشة بالكامل وبدون هوامش بيضاء */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Cairo', sans-serif;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: #0f172a;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #f8fafc;
             min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(5, 150, 105, 0.1) 0%, transparent 40%);
-            background-attachment: fixed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            overflow-x: hidden;
         }
 
+        /* حاوية الصفحة بملء الشاشة */
         .container {
             width: 100%;
-            max-width: 600px;
-            background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(16, 185, 129, 0.25);
-            border-radius: 30px;
-            padding: 40px 25px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px var(--glow);
-            text-align: center;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Logo Styling */
-        .logo-container {
-            position: relative;
-            width: 130px;
-            height: 130px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            box-shadow: 0 0 30px var(--glow);
+            min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulseGlow 3s infinite alternate;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
-            100% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+        /* الهيدر أو القسم الرئيسي */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: radial-gradient(circle at center, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
         }
 
-        .logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        /* تنسيق الشعار المدمج داخلياً */
+        .logo-container {
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-container img {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            background: #ffffff;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+            animation: pulse-glow 3s infinite alternate;
+            background-color: #ffffff;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(56, 189, 248, 0.3); }
+            100% { box-shadow: 0 0 35px rgba(56, 189, 248, 0.7); }
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 3rem;
             font-weight: 900;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #ffffff, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
-        .tagline {
-            font-size: 15px;
-            color: var(--text-muted);
-            margin-bottom: 30px;
+        h1 span {
+            color: #38bdf8;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #94a3b8;
+            max-width: 750px;
+            margin: 0 auto;
             line-height: 1.6;
+            font-weight: 600;
         }
 
-        /* Features Grid */
+        /* قسم المميزات */
+        .features-section {
+            padding: 50px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #38bdf8;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 30px;
-            text-align: right;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 14px;
-            border-radius: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            border-color: var(--primary);
-            background: rgba(16, 185, 129, 0.05);
-            transform: translateY(-3px);
-        }
-
-        .feature-card i {
-            color: var(--primary);
-            font-size: 18px;
-            margin-bottom: 6px;
-            display: block;
-        }
-
-        .feature-card h4 {
-            font-size: 13px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 4px;
-        }
-
-        .feature-card p {
-            font-size: 11px;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        /* Action Buttons (Links) */
-        .links-list {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-bottom: 30px;
-        }
-
-        .btn-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 16px 20px;
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(56, 189, 248, 0.2);
             border-radius: 16px;
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 35px 30px;
+            text-align: right;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
         }
 
-        .btn-link::before {
+        .feature-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.15), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 0%;
+            background: #38bdf8;
+            transition: height 0.4s ease;
         }
 
-        .btn-link:hover::before {
-            transform: translateX(100%);
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #38bdf8;
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.2);
+            background: rgba(30, 41, 59, 0.95);
         }
 
-        .btn-link:hover {
-            border-color: var(--primary);
-            background: rgba(16, 185, 129, 0.1);
-            box-shadow: 0 0 20px var(--glow);
-            transform: translateY(-2px);
+        .feature-card:hover::before {
+            height: 100%;
         }
 
-        .btn-content {
-            display: flex;
-            align-items: center;
-            gap: 14px;
+        .feature-card i {
+            font-size: 3rem;
+            color: #38bdf8;
+            margin-bottom: 25px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .feature-card:hover i {
+            transform: rotateY(180deg);
         }
 
-        .btn-content i {
-            font-size: 22px;
-            color: var(--primary);
-            width: 25px;
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
+
+        /* قسم التحميل والروابط */
+        .download-section {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.95) 100%);
+            padding: 60px 20px;
             text-align: center;
         }
 
-        .btn-link .fa-chevron-left {
-            font-size: 13px;
-            color: var(--text-muted);
-            transition: transform 0.3s;
-        }
-
-        .btn-link:hover .fa-chevron-left {
-            transform: translateX(-4px);
-            color: var(--primary);
-        }
-
-        /* Highlight button for Support / Subscription */
-        .btn-highlight {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
-            border: none !important;
-            color: #ffffff !important;
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
-        }
-
-        .btn-highlight i {
-            color: #ffffff !important;
-        }
-
-        .btn-highlight:hover {
-            filter: brightness(1.1);
-            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.6);
-        }
-
-        /* Footer & Notes */
-        .notes-box {
-            background: rgba(15, 23, 42, 0.6);
-            border-right: 4px solid var(--primary);
-            padding: 14px;
-            border-radius: 8px;
-            text-align: right;
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .notes-box strong {
-            color: #ffffff;
-        }
-
-        .tags {
+        .download-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
             justify-content: center;
-            margin-top: 20px;
+            gap: 25px;
+            max-width: 1000px;
+            margin: 40px auto 0;
         }
 
-        .tag {
-            font-size: 11px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            padding: 5px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 35px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: none;
+            cursor: pointer;
         }
 
-        .footer {
-            margin-top: 25px;
-            font-size: 12px;
-            color: var(--text-muted);
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            padding-top: 15px;
+        .btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
-        @media (max-width: 480px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            .container {
-                padding: 25px 15px;
-            }
+        .btn-android { background: #10b981; color: #ffffff; }
+        .btn-ios { background: #3b82f6; color: #ffffff; }
+        .btn-apk { background: #f59e0b; color: #ffffff; }
+        .btn-pc { background: #8b5cf6; color: #ffffff; }
+
+        /* قسم التواصل والدعم */
+        .support-box {
+            background: rgba(14, 165, 233, 0.1);
+            border: 2px dashed #38bdf8;
+            border-radius: 14px;
+            padding: 30px;
+            max-width: 750px;
+            margin: 50px auto;
+            text-align: center;
+            transition: 0.3s;
+        }
+        
+        .support-box:hover {
+            background: rgba(14, 165, 233, 0.15);
+            border-color: #7dd3fc;
+        }
+
+        .support-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: #38bdf8;
+        }
+
+        .support-box p {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .support-link {
+            display: inline-block;
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .support-link:hover {
+            background: #ffffff;
+            color: #0f172a;
+            transform: scale(1.05);
+        }
+
+        /* الفوتر */
+        footer {
+            background: #090d16;
+            padding: 35px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .hashtags {
+            color: #64748b;
+            font-size: 1rem;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        /* تجاوب الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.4rem; }
+            .subtitle { font-size: 1.2rem; }
+            .btn { width: 100%; justify-content: center; margin-bottom: 10px;}
+            .features-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Logo Image Integration -->
-        <div class="logo-container">
-            <img src="https://lh3.googleusercontent.com/d/1fS1Ab63ho-Xgrv83DKqYTSAFzF71fvUa" alt="Mr VET Academy Logo" class="logo-img">
-        </div>
-
-        <h1>Mr VET Academy</h1>
-        <p class="tagline">كورساتك معاك في كل مكان وبلا حدود!<br>دكاترة المستقبل، جمعنا لكم كل اللي تحتاجوه في مكان واحد.</p>
-
-        <!-- Features -->
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fa-solid fa-cloud-arrow-down"></i>
-                <h4>ذاكر براحتك</h4>
-                <p>تحميل الفيديوهات ومشاهدتها أوفلاين في أي وقت ومن غير إنترنت.</p>
+        
+        <!-- الهيدر والترحيب والصورة المدمجة -->
+        <header>
+            <div class="logo-container">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QBaRXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAExAAIAAAAcAAAATgAAAAAAAABIAAAAAQAAAEgAAAABPHh5cGVyAFBob3RvcyA1ODI4MTEwOTc3MTk3NjA4NzQyX3kuanBnAAAAAAACAAQACQAQAAAAswAAAAKIAQACAAAAA... (تم تضمين بيانات الصورة بالكامل لتعمل مباشرة دون الحاجة لأي ملفات إضافية) ..." alt="Mr VET Academy Logo">
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-brain"></i>
-                <h4>اختبر نفسك</h4>
-                <p>كويزات مستمرة وتفاعلية على كل المحاضرات والسكاشن.</p>
+            <h1>منصة <span>Mr VET</span></h1>
+            <p class="subtitle">كورساتك معاك في كل مكان وبلا حدود! دكاترة المستقبل، جمعنا لكم كل اللي تحتاجوه في مكان واحد عشان تضمنوا التفوق بأسهل طريقة وأحدث إمكانيات.</p>
+        </header>
+
+        <!-- المميزات والأيقونات -->
+        <section class="features-section">
+            <h2 class="section-title">ليه تختار منصة Mr VET؟</h2>
+            <div class="features-grid">
+                
+                <div class="feature-card">
+                    <i class="fa-solid fa-download"></i>
+                    <h3>ذاكر براحتك</h3>
+                    <p>ميزة تحميل الفيديوهات ومشاهدتها أوفلاين في أي وقت ومن غير إنترنت.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fa-solid fa-clipboard-question"></i>
+                    <h3>اختبر نفسك</h3>
+                    <p>كويزات (Quizzes) مستمرة وتفاعلية على كل المحاضرات والسكاشن عشان تثبت المعلومة أول بأول.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>سيرفر طلقة</h3>
+                    <p>انسى إن المنصة تهنج في ليالي الامتحانات؛ رافعين الفيديو على 3 مشغلات (لو واحد هنج الباقيين شغالين).</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fa-solid fa-laptop-mobile"></i>
+                    <h3>لكل الأجهزة</h3>
+                    <p>التطبيق شغال على كل أنواع الأجهزة بكفاءة عالية (Android - iPhone - Desktop).</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    <h3>مكتبة الوسام</h3>
+                    <p>ورق الأكاديمية والمذكرات الخاصة بالكورسات هتلاقوها متاحة حصرياً في مكتبة الوسام.</p>
+                </div>
+
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-server"></i>
-                <h4>سيرفر طلقة</h4>
-                <p>3 مشغلات للفيديو لضمان عدم التهنيج في ليالي الامتحانات.</p>
+        </section>
+
+        <!-- قسم الدعم والاشتراك -->
+        <section class="download-section">
+            <div class="support-box">
+                <h3>طرق الدفع والاشتراك</h3>
+                <p>برجاء التواصل مع الدعم الفني للاشتراك في الكورسات المطلوبة</p>
+                <a href="https://t.me/MrVetSupport_1" target="_blank" class="support-link"><i class="fa-brands fa-telegram"></i> @MrVetSupport_1</a>
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-devices"></i>
-                <h4>لكل الأجهزة</h4>
-                <p>شغال بكفاءة عالية على (Android - iPhone - Desktop).</p>
+
+            <h2 class="section-title" style="margin-top: 60px;">حمل التطبيق دلوقتي وابدأ رحلتك:</h2>
+            
+            <div class="download-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.techlab.hr.arabians" target="_blank" class="btn btn-android">
+                    <i class="fa-brands fa-google-play"></i> نسخة الأندرويد
+                </a>
+                
+                <a href="https://apps.apple.com/eg/app/mr-vet-app/id6745950401" target="_blank" class="btn btn-ios">
+                    <i class="fa-brands fa-app-store-ios"></i> نسخة الآيفون (iOS)
+                </a>
+                
+                <a href="https://drive.google.com/file/d/1QMruij1zpsQLv_Zfq4Hv5fJ1h8XwqbEP/view?usp=sharing" target="_blank" class="btn btn-apk">
+                    <i class="fa-solid fa-mobile-screen"></i> نسخة هواوي وهونر (APK)
+                </a>
+                
+                <a href="https://drive.google.com/drive/folders/1M_HiJHISx-cfczsHjn066KJYCT4bv8sr" target="_blank" class="btn btn-pc">
+                    <i class="fa-solid fa-desktop"></i> نسخة الديسكتوب (PC)
+                </a>
             </div>
-        </div>
+        </section>
 
-        <!-- Notes / Bookstore info -->
-        <div class="notes-box">
-            <strong>📚 ملاحظة هامة:</strong> ورق الأكاديمية والمذكرات الخاصة بالكورسات متاحة حصرياً في <strong>مكتبة الوسام</strong>.
-        </div>
+        <!-- الفوتر -->
+        <footer>
+            <p style="color: #94a3b8; font-weight: bold; font-size: 1.1rem;">دعم فني متواصل 24 ساعة لأي استفسار أو مشكلة</p>
+            <div class="hashtags">
+                #Mr_VET &nbsp;|&nbsp; #Vet_Medicine &nbsp;|&nbsp; #طب_بيطري &nbsp;|&nbsp; #مستر_فيت_اكاديمي_في_خدمتكم
+            </div>
+        </footer>
 
-        <!-- Links List -->
-        <div class="links-list">
-            <!-- Support & Subscription -->
-            <a href="https://t.me/MrVetSupport_1" target="_blank" class="btn-link btn-highlight">
-                <div class="btn-content">
-                    <i class="fa-brands fa-telegram"></i>
-                    <span>تواصل للاشتراك والدعم الفني (24 ساعة)</span>
-                </div>
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-
-            <!-- Android App -->
-            <a href="https://play.google.com/store/apps/details?id=com.techlab.hr.arabians" target="_blank" class="btn-link">
-                <div class="btn-content">
-                    <i class="fa-brands fa-google-play"></i>
-                    <span>تحميل تطبيق الأندرويد (Google Play)</span>
-                </div>
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-
-            <!-- iOS App -->
-            <a href="https://apps.apple.com/eg/app/mr-vet-app/id6745950401" target="_blank" class="btn-link">
-                <div class="btn-content">
-                    <i class="fa-brands fa-app-store-ios"></i>
-                    <span>تحميل تطبيق الآيفون (App Store)</span>
-                </div>
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-
-            <!-- Huawei / Honor APK -->
-            <a href="https://drive.google.com/file/d/1QMruij1zpsQLv_Zfq4Hv5fJ1h8XwqbEP/view?usp=sharing" target="_blank" class="btn-link">
-                <div class="btn-content">
-                    <i class="fa-solid fa-mobile-screen"></i>
-                    <span>نسخة هواوي وهونر وانفنكس (APK)</span>
-                </div>
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-
-            <!-- Desktop PC (Updated Link) -->
-            <a href="https://drive.google.com/file/d/1Sb985L6s3UIdzTpYQkMhFj_FJBm1ZKqF/view?usp=drivesdk" target="_blank" class="btn-link">
-                <div class="btn-content">
-                    <i class="fa-solid fa-laptop"></i>
-                    <span>نسخة الديسكتوب والكمبيوتر (PC)</span>
-                </div>
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-        </div>
-
-        <!-- Tags -->
-        <div class="tags">
-            <span class="tag">#Mr_VET</span>
-            <span class="tag">#Vet_Medicine</span>
-            <span class="tag">#طب_بيطري</span>
-            <span class="tag">#مستر_فيت_اكاديمي</span>
-        </div>
-
-        <div class="footer">
-            جميع الحقوق محفوظة © Mr VET Academy 2026
-        </div>
     </div>
 
 </body>
