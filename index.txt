@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة Mr VET Academy | كورساتك معاك في كل مكان وبلا حدود</title>
+    <!-- Google Fonts & FontAwesome for luxury icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #0f172a;
+            --accent: #34d399;
+            --bg-dark: #090d16;
+            --card-bg: rgba(17, 24, 39, 0.85);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --glow: rgba(16, 185, 129, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(5, 150, 105, 0.1) 0%, transparent 40%);
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 30px;
+            padding: 40px 25px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px var(--glow);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Logo Styling */
+        .logo-container {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 0 30px var(--glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+            100% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ffffff, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 30px;
+            text-align: right;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 14px;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            background: rgba(16, 185, 129, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .feature-card i {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .feature-card h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .feature-card p {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Action Buttons (Links) */
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 30px;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 20px;
+            border-radius: 16px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-link::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.15), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .btn-link:hover::before {
+            transform: translateX(100%);
+        }
+
+        .btn-link:hover {
+            border-color: var(--primary);
+            background: rgba(16, 185, 129, 0.1);
+            box-shadow: 0 0 20px var(--glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn-content i {
+            font-size: 22px;
+            color: var(--primary);
+            width: 25px;
+            text-align: center;
+        }
+
+        .btn-link .fa-chevron-left {
+            font-size: 13px;
+            color: var(--text-muted);
+            transition: transform 0.3s;
+        }
+
+        .btn-link:hover .fa-chevron-left {
+            transform: translateX(-4px);
+            color: var(--primary);
+        }
+
+        /* Highlight button for Support / Subscription */
+        .btn-highlight {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+            border: none !important;
+            color: #ffffff !important;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-highlight i {
+            color: #ffffff !important;
+        }
+
+        .btn-highlight:hover {
+            filter: brightness(1.1);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.6);
+        }
+
+        /* Footer & Notes */
+        .notes-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-right: 4px solid var(--primary);
+            padding: 14px;
+            border-radius: 8px;
+            text-align: right;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .notes-box strong {
+            color: #ffffff;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tag {
+            font-size: 11px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            padding: 5px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 15px;
+        }
+
+        @media (max-width: 480px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 25px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo Image Integration -->
+        <div class="logo-container">
+            <img src="https://lh3.googleusercontent.com/d/1fS1Ab63ho-Xgrv83DKqYTSAFzF71fvUa" alt="Mr VET Academy Logo" class="logo-img">
+        </div>
+
+        <h1>Mr VET Academy</h1>
+        <p class="tagline">كورساتك معاك في كل مكان وبلا حدود!<br>دكاترة المستقبل، جمعنا لكم كل اللي تحتاجوه في مكان واحد.</p>
+
+        <!-- Features -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-cloud-arrow-down"></i>
+                <h4>ذاكر براحتك</h4>
+                <p>تحميل الفيديوهات ومشاهدتها أوفلاين في أي وقت ومن غير إنترنت.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-brain"></i>
+                <h4>اختبر نفسك</h4>
+                <p>كويزات مستمرة وتفاعلية على كل المحاضرات والسكاشن.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-server"></i>
+                <h4>سيرفر طلقة</h4>
+                <p>3 مشغلات للفيديو لضمان عدم التهنيج في ليالي الامتحانات.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-devices"></i>
+                <h4>لكل الأجهزة</h4>
+                <p>شغال بكفاءة عالية على (Android - iPhone - Desktop).</p>
+            </div>
+        </div>
+
+        <!-- Notes / Bookstore info -->
+        <div class="notes-box">
+            <strong>📚 ملاحظة هامة:</strong> ورق الأكاديمية والمذكرات الخاصة بالكورسات متاحة حصرياً في <strong>مكتبة الوسام</strong>.
+        </div>
+
+        <!-- Links List -->
+        <div class="links-list">
+            <!-- Support & Subscription -->
+            <a href="https://t.me/MrVetSupport_1" target="_blank" class="btn-link btn-highlight">
+                <div class="btn-content">
+                    <i class="fa-brands fa-telegram"></i>
+                    <span>تواصل للاشتراك والدعم الفني (24 ساعة)</span>
+                </div>
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+
+            <!-- Android App -->
+            <a href="https://play.google.com/store/apps/details?id=com.techlab.hr.arabians" target="_blank" class="btn-link">
+                <div class="btn-content">
+                    <i class="fa-brands fa-google-play"></i>
+                    <span>تحميل تطبيق الأندرويد (Google Play)</span>
+                </div>
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+
+            <!-- iOS App -->
+            <a href="https://apps.apple.com/eg/app/mr-vet-app/id6745950401" target="_blank" class="btn-link">
+                <div class="btn-content">
+                    <i class="fa-brands fa-app-store-ios"></i>
+                    <span>تحميل تطبيق الآيفون (App Store)</span>
+                </div>
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+
+            <!-- Huawei / Honor APK -->
+            <a href="https://drive.google.com/file/d/1QMruij1zpsQLv_Zfq4Hv5fJ1h8XwqbEP/view?usp=sharing" target="_blank" class="btn-link">
+                <div class="btn-content">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <span>نسخة هواوي وهونر وانفنكس (APK)</span>
+                </div>
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+
+            <!-- Desktop PC (Updated Link) -->
+            <a href="https://drive.google.com/file/d/1Sb985L6s3UIdzTpYQkMhFj_FJBm1ZKqF/view?usp=drivesdk" target="_blank" class="btn-link">
+                <div class="btn-content">
+                    <i class="fa-solid fa-laptop"></i>
+                    <span>نسخة الديسكتوب والكمبيوتر (PC)</span>
+                </div>
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+        </div>
+
+        <!-- Tags -->
+        <div class="tags">
+            <span class="tag">#Mr_VET</span>
+            <span class="tag">#Vet_Medicine</span>
+            <span class="tag">#طب_بيطري</span>
+            <span class="tag">#مستر_فيت_اكاديمي</span>
+        </div>
+
+        <div class="footer">
+            جميع الحقوق محفوظة © Mr VET Academy 2026
+        </div>
+    </div>
+
+</body>
+</html>
